@@ -46,6 +46,7 @@ const StyledHeader = styled.header`
   width: 75%;
   height: 18vh;
   padding-left: 25px;
+  border: solid;
 `;
 
 const HeaderNavBar = styled.nav`
