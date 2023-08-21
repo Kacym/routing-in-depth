@@ -4,31 +4,36 @@ import Header from "../../components/header/Header";
 
 const RatingsPage = () => {
   return (
-    <>
-      <Header />
+    <GeneralBox>
+      <Header width="100%"/>
       <StyledRatingsPage>
-          1
+          <ContentBox>
+            <h2>Ratings page</h2>
+          </ContentBox>
       </StyledRatingsPage>
-    </>
+    </GeneralBox>
   );
 };
 
 const GeneralBox = styled.div`
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
 
-  /* width: 70%;
-  border: solid; */
+  width: 75%;
 `
 
 const StyledRatingsPage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background-color: #e3e7ed;
-  display: block;
+  height: 82vh;
 `;
 
 const ContentBox = styled.div`
   width: 95%;
-  height: 85vh;
+  height: 70vh;
 
   padding: 20px 0 0 20px;
   background-color: white;

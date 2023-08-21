@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import "./Header.css"
 
-const Header = () => {
+const Header = (props) => {
+
   return (
-    <StyledHeader>
+    <StyledHeader width={props.width}>
       <HeaderNavBar>
         <NavLink
           className={({ isActive }) => {
@@ -43,7 +44,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   background-color: #2c87d9;
-  width: 75%;
+  width: ${(props) => props.width || "75%"};
   height: 18vh;
   padding-left: 25px;
   border: solid;
