@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/routing-in-depth/static/css/main.fcaa2700.css",
+    "main.js": "/routing-in-depth/static/js/main.eaee0b0b.js",
+    "index.html": "/routing-in-depth/index.html",
+    "main.fcaa2700.css.map": "/routing-in-depth/static/css/main.fcaa2700.css.map",
+    "main.eaee0b0b.js.map": "/routing-in-depth/static/js/main.eaee0b0b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcaa2700.css",
+    "static/js/main.eaee0b0b.js"
+  ]
+}
