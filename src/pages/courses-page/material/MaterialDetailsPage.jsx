@@ -46,7 +46,7 @@ const MaterialDetailsPage = () => {
                   return "defaultMaterialNav";
                 }}
               >
-                Wating
+                Waiting
               </NavLink>
               <NavLink
                 to={`/courses/materials/${currentMaterial.id}/details/late`}
@@ -59,9 +59,11 @@ const MaterialDetailsPage = () => {
               >
                 Late
               </NavLink>
-              <Outlet/>
             </StatusNavList>
           </StatusFilter>
+          <StatusFilterContent>
+              <Outlet/>
+          </StatusFilterContent>
         </ContentBox>
       </StyledRatingsPage>
     </GeneralBox>
@@ -95,15 +97,27 @@ const ContentBox = styled.div`
 const StudentInfo = styled.div`
   padding-left: 20px;
 `;
+
 const StatusFilter = styled.div`
+  display: flex;
+  align-items: center;
   background-color: #14ac9d;
   margin-top: 5%;
   width: 100%;
-  height: 20%;
+  height: 15%;
 `;
 
 const StatusNavList = styled.ul`
+  display: flex;
+  justify-content: space-around;
   list-style: none;
+  width: 40%;
 `;
+
+const StatusFilterContent = styled.div`
+  background-color: #D0F0EC;
+  height: 54.5%;
+  padding: 20px 0 0 20px;
+`
 
 export default MaterialDetailsPage;

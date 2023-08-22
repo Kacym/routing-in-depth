@@ -1,3 +1,9 @@
+.defaultMaterialNav {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
 .activeMaterialNav {
     color: #283548;
     border-bottom: solid yellow;

@@ -5,6 +5,7 @@ import Materials from "./material/Materials";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/UI/Button";
 import Modal from "../../components/modal/Modal";
+import { createPortal } from "react-dom";
 
 export const DUMMY_MATERIALS = [
   {
@@ -33,7 +34,10 @@ const MaterialsPage = () => {
 
   return (
     <GeneralBox>
-      {showModal && <Modal closeModal={showAndCloseModalHandler}/>}
+      {showModal && createPortal(
+         <Modal closeModal={showAndCloseModalHandler}/>,
+         document.getElementById("modal")
+      )}
       <Header width="100%" />
       <StyledMaterialsPage>
         <ContentBox>

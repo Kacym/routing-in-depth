@@ -18,6 +18,7 @@ const StyledModal = styled.div`
   background-color: #F5DADE;
   padding: 40px 50px;
   top: 18%;
+  left: 25%;
   width: 50%;
   height: 50vh;
   position: fixed;

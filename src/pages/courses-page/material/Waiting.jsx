@@ -2,7 +2,7 @@ import React from 'react'
 
 const Waiting = () => {
   return (
-    <div>Waiting</div>
+    <h2>Waiting page</h2>
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Late = () => {
   return (
-    <div>Late</div>
+    <h2>Late page</h2>
   )
 }
 

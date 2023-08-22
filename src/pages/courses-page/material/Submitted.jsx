@@ -2,7 +2,7 @@ import React from 'react'
 
 const Submitted = () => {
   return (
-    <div>Submitted</div>
+    <h2>Submitted page</h2>
   )
 }
 
