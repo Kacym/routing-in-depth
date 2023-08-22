@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { styled } from "styled-components";
 import Header from "../../components/header/Header";
 import Materials from "./material/Materials";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Button from "../../components/UI/Button";
 import Modal from "../../components/modal/Modal";
 import { createPortal } from "react-dom";
@@ -20,12 +20,23 @@ export const DUMMY_MATERIALS = [
 
 const MaterialsPage = () => {
 
+  const [search, setSearch] = useSearchParams();
   const [showModal, setShowModal] = useState(false);
 
   const showAndCloseModalHandler = () => {
     setShowModal((prevState) => !prevState)
   }
   
+  const openModal = () => {
+    setSearch({ modal: "addNewMaterial" });
+    showAndCloseModalHandler()
+  };
+
+  const closeModal = () => {
+    setSearch({});
+    showAndCloseModalHandler()
+  };
+
   const navigate = useNavigate();
 
   const clickHandler = (materialId) => {
@@ -35,13 +46,13 @@ const MaterialsPage = () => {
   return (
     <GeneralBox>
       {showModal && createPortal(
-         <Modal closeModal={showAndCloseModalHandler}/>,
+         <Modal closeModal={closeModal}/>,
          document.getElementById("modal")
       )}
       <Header width="100%" />
       <StyledMaterialsPage>
         <ContentBox>
-          <Button onClick={showAndCloseModalHandler} width="350px" mTop="-20px" mBottom="20px" fontSize="25px" title="Add new material" color="white" bgColor="#E38443"/>
+          <Button onClick={openModal} width="350px" mTop="-20px" mBottom="20px" fontSize="25px" title="Add new material" color="white" bgColor="#E38443"/>
           <MaterialsList>
             {DUMMY_MATERIALS.map((material) => {
               return (
