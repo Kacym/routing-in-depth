@@ -9,6 +9,9 @@ import NotificationsPage from "../pages/notifications-page/NotificationsPage"
 import SchedulePage from "../pages/schedule-page/SchedulePage"
 import StudentDetailsPage from "../pages/courses-page/student/StudentDetailsPage";
 import MaterialDetailsPage from "../pages/courses-page/material/MaterialDetailsPage";
+import Submitted from "../pages/courses-page/material/Submitted";
+import Waiting from "../pages/courses-page/material/Waiting";
+import Late from "../pages/courses-page/material/Late";
 
 const AppRouters = () => {
   return (
@@ -18,7 +21,11 @@ const AppRouters = () => {
       <Route path="/courses/student" element={<StudentPage />} />
       <Route path="/courses/student/:id/details" element={<StudentDetailsPage />}/>
       <Route path="/courses/materials" element={<MaterialsPage />} />
-      <Route path="/courses/materials/:id/details" element={<MaterialDetailsPage />}/>
+      <Route path="/courses/materials/:id/details/*" element={<MaterialDetailsPage />}>
+        <Route path="submitted" element={<Submitted/>}/>
+        <Route path="waiting" element={<Waiting/>}/>
+        <Route path="late" element={<Late/>}/>
+      </Route>
       <Route path="/courses/ratings" element={<RatingsPage />} />
 
       {/* Other pages */}
